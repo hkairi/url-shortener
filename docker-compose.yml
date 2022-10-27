@@ -1,0 +1,26 @@
+version: '3'
+services:
+  ui:
+    build: ./ui
+    ports:
+      - '3000:80'
+    environment:
+      - API_URL=http://api:4000
+    depends_on:
+      - api
+
+  api:
+    build: ./api
+    ports:
+      - '4000:3000'
+    environment:
+      - MONGO_URI=mongodb://database:27017
+      - PORT=3000
+    depends_on:
+      - database
+
+  database:
+    image: 'mongo:latest'
+    ports:
+      - '27017:27017'
+
