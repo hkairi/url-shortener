@@ -8,7 +8,7 @@ Built using :
 ## Docker & Docker Compose
 
 ```sh
-git clone
+git clone https://github.com/hkairi/url-shortener.git
 cd url-shortener
 docker compose up --build
 ```
