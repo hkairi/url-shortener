@@ -116,7 +116,8 @@ class App extends React.Component  {
                           logout={this.onLogout}
                           onNewUrl={this.onNewUrl}
                           onDeleteUrl={this.onDeleteUrl}
-                          urls={this.state.urls}/>
+                          urls={this.state.urls}
+                          apiUrl={API_URL}/>
           : <LoginForm handleSubmit={this.onLogin}
                        setErrorMessages={this.setErrorMessages}/>
         }

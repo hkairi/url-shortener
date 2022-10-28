@@ -1,7 +1,9 @@
 import React from 'react';
 
 function UrlList(props) {
-  const visitUrl =(url) => {
+  const visitUrl =(url_id) => {
+    console.log(props);
+    let url = `${props.api_url}/visit/${url_id}`;
     fetch(url)
       .then(res => res.json())
       .then(res => window.location.replace(res.url));
@@ -27,7 +29,7 @@ function UrlList(props) {
           <tr key={idx}>
             <td>{url.visits}</td>
             <td>
-              <a href="#" onClick={()=>visitUrl(url.short_url)}>{url.short_url}</a>
+              <a href="#" onClick={()=>visitUrl(url.id)}>{url.short_url}</a>
             </td>
               <td><a href="#" onClick={()=> deleteUrl(url.id)}>X</a></td>
           </tr>
