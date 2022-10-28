@@ -38,7 +38,9 @@ class UrlShortener extends React.Component {
           <input type="submit" value="Submit" />
         </form>
 
-        <UrlList items={this.props.urls} deleteUrl={this.props.onDeleteUrl} />
+        <UrlList items={this.props.urls}
+                 deleteUrl={this.props.onDeleteUrl}
+                 api_url={this.props.apiUrl}/>
       </div>
     );
   }
